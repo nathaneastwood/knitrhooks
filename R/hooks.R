@@ -21,13 +21,15 @@
 #' @examples
 #' output_max_height()
 #'
+#' @importFrom knitr knit_hooks
+#'
 #' @export
 output_max_height <- function() {
-  knitr::knit_hooks$set(output = function(x, options) {
-    if (!is.null(options$max_height)) {
+  knit_hooks$set(output = function(x, options) {
+    if (!is.null(options$output_max_height)) {
       paste0(
         '<pre style = "max-height:',
-        options$max_height,
+        options$output_max_height,
         '; float: left; width: 910px; overflow-y: auto;">', x, "</pre>")
     } else {
       x
