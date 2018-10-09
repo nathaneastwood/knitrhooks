@@ -1,8 +1,8 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-hooks
-=====
+knitrhooks
+==========
 
-**hooks** provides useful knitr hooks to extend the functionality of knitr, Rmarkdown and bookdown.
+**knitrhooks** provides useful knitr hooks to extend the functionality of knitr, Rmarkdown and bookdown.
 
 Example
 -------
@@ -11,7 +11,8 @@ The current functionality provided by this package is to set a maximum height fo
 
 <pre>
 <code>```{r max_width_example}
-hooks::max_height()
+library(knitrhooks)
+max_height()
 ```</code>
 
 # Example document
