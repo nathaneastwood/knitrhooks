@@ -1,0 +1,22 @@
+Package: hooks
+Type: Package
+Title: Extend knitr with Hooks
+Version: 0.0.1
+Authors@R: 
+    c(
+      person(
+        "Nathan", "Eastwood", , "nathan.eastwood@icloud.com", c("aut", "cre")
+      ),
+      person(
+        "Michael", "Harper", , "", "ctb"
+      )
+    )
+Description: Provide useful knitr hooks to extend the functionality of knitr,
+    Rmarkdown and bookdown.
+Depends: 
+    R (>= 3.5.0),
+    knitr (>= 1.20)
+License: file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.0
