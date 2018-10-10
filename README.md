@@ -17,7 +17,7 @@ The below table details the hooks currently available within the package.
 Usage
 -----
 
-Currently the package requires you to load the functionality of each given hook before you can use it. [Alternative](#3) solutions are currently being considered.
+Currently the package requires you to load the functionality of each given hook before you can use it. [Alternative](https://github.com/nathaneastwood/knitrhooks/issues/3) solutions are currently being considered.
 
 <pre>
 <code>```{r max_height_example}
