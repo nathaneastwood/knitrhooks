@@ -39,7 +39,8 @@ output_max_height <- function() {
 
 #' Print certain output lines
 #'
-#' Print only lines of the R output that the user specifies.
+#' Print only lines of the R output that the user specifies. This works
+#' similarly to how \code{echo} works for printing R code.
 #'
 #' To run this hook, call the \code{output_lines()} function and then you can
 #' either set a global maximum height
@@ -69,6 +70,7 @@ output_max_height <- function() {
 #' output_lines()
 #'
 #' @importFrom knitr knit_hooks
+#' @importFrom utils head
 #'
 #' @export
 output_lines <- function() {

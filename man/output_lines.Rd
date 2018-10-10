@@ -7,7 +7,8 @@
 output_lines()
 }
 \description{
-Print only lines of the R output that the user specifies.
+Print only lines of the R output that the user specifies. This works
+similarly to how \code{echo} works for printing R code.
 }
 \details{
 To run this hook, call the \code{output_lines()} function and then you can

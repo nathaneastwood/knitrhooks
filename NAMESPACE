@@ -3,3 +3,4 @@
 export(output_lines)
 export(output_max_height)
 importFrom(knitr,knit_hooks)
+importFrom(utils,head)
