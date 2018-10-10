@@ -9,10 +9,10 @@ Available Hooks
 
 The below table details the hooks currently available within the package.
 
-| hook name           | description                                 |
-|---------------------|---------------------------------------------|
-| `output_lines`      | Print user specified lines of R output      |
-| `output_max_height` | Add a scrollbar to output of a given height |
+| hook name           | description                                 | HTML | PDF |
+|---------------------|---------------------------------------------|------|-----|
+| `output_lines`      | Print user specified lines of R output      | X    | X   |
+| `output_max_height` | Add a scrollbar to output of a given height | X    |     |
 
 Usage
 -----
