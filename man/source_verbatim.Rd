@@ -24,6 +24,23 @@ or you can print it on a chunk by chunk basis
 print(mtcars)
 ```
 }
+
+If you would like to only print the source code as verbatim and not have the
+code evaluated, use \code{eval = FALSE}, i.e.
+
+\preformatted{
+```{r, eval = FALSE, source_verbatim = TRUE}
+print(mtcars)
+```
+}
+
+The resulting output will look like this.
+
+\preformatted{
+```{r}
+print(mtcars)
+```
+}
 }
 \examples{
 source_verbatim()
