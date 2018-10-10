@@ -4,8 +4,18 @@ knitrhooks
 
 **knitrhooks** provides useful knitr hooks to extend the functionality of **knitr**, **Rmarkdown** and **bookdown**.
 
-Example
--------
+Available Hooks
+---------------
+
+The below table details the hooks currently available within the package.
+
+| hook name           | description                                 |
+|---------------------|---------------------------------------------|
+| `output_lines`      | Print user specified lines of R output      |
+| `output_max_height` | Add a scrollbar to output of a given height |
+
+Usage
+-----
 
 The current functionality provided by this package is to set a maximum height for R output and add a scroll bar to any output larger than a given height.
 

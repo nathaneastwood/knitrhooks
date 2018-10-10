@@ -36,3 +36,62 @@ output_max_height <- function() {
     }
   })
 }
+
+#' Print certain output lines
+#'
+#' Print only lines of the R output that the user specifies.
+#'
+#' To run this hook, call the \code{output_lines()} function and then you can
+#' either set a global maximum height
+#'
+#' \code{
+#' knitr::opts_chunk$set(output_lines = 1:10)
+#' }
+#'
+#' or you can specify it on a chunk by chunk basis
+#'
+#' \preformatted{
+#' ```{r output_lines = 3:15}
+#' print(mtcars)
+#' ```
+#' }
+#'
+#' Several options are available
+#' \describe{
+#'   \item{output_lines = n}{prints lines 1:n ...}
+#'   \item{output_lines = 1:n}{prints lines 1:n ...}
+#'   \item{output_lines = 3:15}{prints lines ... 3:15 ...}
+#'   \item{output_lines = -(1:8)}{removes lines 1:8 and prints ... 9:n ...}
+#' }
+#' Note, there is no allowance for anything but a consecutive range of lines
+#'
+#' @examples
+#' output_lines()
+#'
+#' @importFrom knitr knit_hooks
+#'
+#' @export
+output_lines <- function() {
+  hook_output <- knit_hooks$get("output")
+  knit_hooks$set(output = function(x, options) {
+    lines <- options$output_lines
+    if (is.null(lines)) {
+      return(hook_output(x, options))
+    }
+    x <- unlist(strsplit(x, "\n"))
+    more <- "..."
+    if (length(lines) == 1) {
+      if (length(x) > lines) {
+        x <- c(head(x, lines), more)
+      }
+    } else {
+      x <- c(
+        if (abs(lines[1]) > 1) more else NULL,
+        x[lines],
+        if (length(x) > lines[abs(length(lines))]) more else NULL
+      )
+    }
+    x <- paste(c(x, ""), collapse = "\n")
+    hook_output(x, options)
+  })
+}
