@@ -7,12 +7,13 @@ knitrhooks
 Available Hooks
 ---------------
 
-The below table details the hooks currently available within the package.
+The below table details the hooks currently available within the package. Some hooks are only available for particular output formats.
 
 | hook name           | description                                 | HTML | PDF |
 |---------------------|---------------------------------------------|------|-----|
 | `output_lines`      | Print user specified lines of R output      | X    | X   |
 | `output_max_height` | Add a scrollbar to output of a given height | X    |     |
+| `source_verbatim`   | Print verbatim code chunks                  | X    | X   |
 
 Usage
 -----

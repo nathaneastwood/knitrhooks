@@ -2,5 +2,6 @@
 
 export(output_lines)
 export(output_max_height)
+export(source_verbatim)
 importFrom(knitr,knit_hooks)
 importFrom(utils,head)

@@ -12,7 +12,7 @@ similarly to how \code{echo} works for printing R code.
 }
 \details{
 To run this hook, call the \code{output_lines()} function and then you can
-either set a global maximum height
+either print a number of lines for all chunks
 
 \code{
 knitr::opts_chunk$set(output_lines = 1:10)
