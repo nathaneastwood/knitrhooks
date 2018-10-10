@@ -133,6 +133,7 @@ source_verbatim <- function() {
       )
       opts <- opts[!opts %in% c(" ", "")]
       opts <- gsub("^\\s", "", opts)
+      opts <- gsub("eval\\s=\\FALSE", "", opts)
       bef <- if (length(opts) != 0 && nchar(opts) > 0) {
         sprintf("\n\n    ```{r, %s}\n", opts, "\n")
       } else {
