@@ -219,7 +219,7 @@ chunk_head <- function() {
       paste0(
         "````md\n", bef, "\n",
         paste(x, collapse = "\n"),
-        "\n```\n````")
+        "\n```\n````\n")
 
     } else {
       # Default formatting if the chunk option is not set
