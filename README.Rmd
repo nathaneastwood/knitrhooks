@@ -27,6 +27,7 @@ The below table details the hooks currently available within the package. Some h
 | `output_lines`      | Print user specified lines of R output      | X      | X     | 
 | `output_max_height` | Add a scrollbar to output of a given height | X      |       |
 | `source_verbatim`   | Print verbatim code chunks                  | X      | X     |
+| `chunk_head`        | Print chunk headers within outputs          | X      | X     |
 
 ## Usage
 

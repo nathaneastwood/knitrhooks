@@ -169,3 +169,64 @@ source_verbatim <- function() {
     }
   })
 }
+
+
+#' Print code chunk headers
+#'
+#' View the code chunk "asis" along with the chunk output.
+#'
+#' To run this hook, call the \code{chunk_head()} function and then you can
+#' either print all source code as verbatim chunks. This function performs a similar
+#' function to \code{source_verbatim()}, but this version will keep the code within
+#' the shaded code environment.
+#'
+#' \preformatted{
+#' ```{r, chunk_head = TRUE}
+#' print(mtcars)
+#' ```
+#' }
+#'
+#' @examples
+#' chunk_head()
+#'
+#' @importFrom knitr knit_hooks
+#'
+#' @export
+#'
+chunk_head <- function() {
+
+  knitr::knit_hooks$set(source = function(x, options) {
+    if (!is.null(options$chunk_head) && options$chunk_head){
+
+      # Extract the chunk options and remove the 'chunk_head' argument from the YAML
+      opts <- gsub(
+        "chunk_head\\s*=\\s*TRUE\\s*,",
+        "",
+        options$params.src)
+      opts <- gsub("  ", " ", opts)
+      opts <- opts[!opts %in% c(" ", "")]
+      opts <- gsub("^\\s", "", opts)
+      optsList <- sprintf("%s", opts)
+
+      # Format how the chunk options appear
+      bef <- if (length(opts) != 0 && nchar(opts) > 0) {
+        paste0("```{r, ", optsList, "}")
+      } else {
+        "```{r}\n"
+      }
+
+      # Add Additional Markdown indentation to code
+      paste0(
+        "````md\n", bef, "\n",
+        x,
+        "\n```\n````")
+
+    } else {
+      # Default formatting if the chunk option is not set
+      paste0(
+        "\n\n```", tolower(options$engine), "\n", paste(x, collapse = "\n"),
+        "\n```\n\n"
+      )
+    }
+  })
+}
