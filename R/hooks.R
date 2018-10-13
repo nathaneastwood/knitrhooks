@@ -218,7 +218,7 @@ chunk_head <- function() {
       # Add Additional Markdown indentation to code
       paste0(
         "````md\n", bef, "\n",
-        x,
+        paste(x, collapse = "\n"),
         "\n```\n````")
 
     } else {
