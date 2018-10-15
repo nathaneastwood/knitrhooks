@@ -11,9 +11,9 @@ View the code chunk "asis" along with the chunk output.
 }
 \details{
 To run this hook, call the \code{chunk_head()} function and then you can
-either print all source code as verbatim chunks. This function performs a similar
-function to \code{source_verbatim()}, but this version will keep the code within
-the shaded code environment.
+either print all source code as verbatim chunks. This function performs a
+similar function to \code{source_verbatim()}, but this version will keep the
+code within the shaded code environment.
 
 \preformatted{
 ```{r, chunk_head = TRUE}
