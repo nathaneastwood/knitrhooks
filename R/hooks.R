@@ -30,9 +30,9 @@ output_max_height <- function() {
       paste0(
         '<pre style = "max-height:',
         options$output_max_height,
-        '; float: left; width: 910px; overflow-y: auto;">', x, "</pre>")
+        '; overflow-y: auto;">', x, "</pre>")
     } else {
-      x
+      paste0("<pre>", x, "</pre>")
     }
   })
 }
